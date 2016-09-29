@@ -19,7 +19,7 @@ var msgsrv = webHost;
 
 // GraphQL server
 var GQLhost = msgsrv;
-var GQLport = '9898';
+var GQLport = '9000';
 var GQLpath = '/api/graphql/';
 var GQLurl  = webProto + '//' + GQLhost + ':' + GQLport + GQLpath;
 
