@@ -1,0 +1,36 @@
+        <div id="containerMain">
+            <div id="TSK_TaskEditorDisplay">
+                <div id="TSK_TaskListSection">
+                    <div id="TSK_Tasks"></div>
+                    <div id="TSK_Commands">
+                        <div id="TSK_Save" class="TSK_TaskCommand">Save</div>
+                        <div id="TSK_New" class="TSK_TaskCommand">New</div>
+                        <div id="TSK_Clone" class="TSK_TaskCommand" style="background-color:#000055;">Clone</div>
+                        <div id="TSK_Delete" class="TSK_TaskCommand" style="background-color:#550000;">DELETE</div>
+                    </div>
+                </div>
+                <div id="TSK_TaskSection">
+                    <div id="TSK_Filters">
+                        <div style="display:flex;width:100%;align-content:center;align-items:center;">
+                            <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">Task Type: </span>
+                            <SELECT id="TSK_TaskTypePicker" onchange="refreshTaskEditorDisplay(this.value,'');" style="font-size:24px;">
+
+                            </SELECT>
+                            </div>
+                            <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">Completed: </span>
+                            <SELECT id="TSK_TaskCompletePicker" onchange="refreshTaskEditorDisplay('',this.value);" style="font-size:24px;">
+                            <OPTION VALUE="true">Yes</OPTION>
+                            <OPTION VALUE="false">No</OPTION>
+                            <OPTION VALUE="">-</OPTION>
+                            </SELECT>
+                            </div>
+                        </div>
+                        <div id="TSK_MSG"></div>
+                    </div>
+                    <hr />
+                    <div id="TSK_DetailSection">
+                    <div id="TSK_Detail"></div>
+                    </div>
+                </div>
+            </div>
+        </div>

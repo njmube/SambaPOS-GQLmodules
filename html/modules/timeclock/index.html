@@ -1,0 +1,35 @@
+        <div id="containerMain">
+            <div id="TC_TimeclockDisplay">
+                <div id="TC_EntitySection">
+                    <div id="TC_Entities"></div>
+                    <div id="TC_EntityCommands">
+                        <div id="TC_Clock_In" class="TC_EntityCommand">Clock In</div>
+                        <div id="TC_Clock_Out" class="TC_EntityCommand">Clock Out</div>
+                    </div>
+                </div>
+                <div id="REP_ReportSection">
+                    <div id="REP_DateFilters">
+                        <div style="margin:2px;">
+                            <span style="color:#DDDDDD;line-height:2;">Period:</span><br />
+                            <SELECT id="REP_PeriodPicker" onchange="changeReportPeriod(this.value,'TC_Entities');" style="font-size:24px;">
+                            <OPTION VALUE="This Month">This Month</OPTION>
+                            <OPTION VALUE="Past Month">Past Month</OPTION>
+                            <OPTION VALUE="Today">Today</OPTION>
+                            <OPTION VALUE="Yesterday">Yesterday</OPTION>
+                            <OPTION VALUE="This Week">This Week</OPTION>
+                            <OPTION VALUE="Past Week">Past Week</OPTION>
+                            <OPTION VALUE="This Year">This Year</OPTION>
+                            <OPTION VALUE="Past Year">Past Year</OPTION>
+                            <OPTION VALUE="ignore">(ignore period)</OPTION>
+                            </SELECT>
+                        </div>
+                        
+                        <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">Start:</span><br /><input id="REP_DateStart" type="date" style="font-size:24px;"></div>
+                        <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">End:</span><br /><input id="REP_DateEnd" type="date" style="font-size:24px;"></div>
+                        <div style="margin:2px;flex-grow:1;"><span style="color:#DDDDDD;line-height:2;">Refresh:</span><br /><div class="REP_Command" style="margin:2px;font-size:30px;font-weight:bold;" onclick="changeReportPeriod('ignore','TC_Entities');">Apply</div></div>
+
+                    </div>
+                    <div id="REP_Report"></div>
+                </div>
+            </div>
+        </div>

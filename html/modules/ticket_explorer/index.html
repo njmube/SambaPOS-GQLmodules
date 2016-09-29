@@ -1,0 +1,46 @@
+        <div id="containerMain">
+            <div id="TE_TicketExplorer">
+                <div id="TE_TicketListSection">
+                    <div id="TE_Tickets"></div>
+                </div>
+                <div id="REP_ReportSection">
+                    <div id="REP_DateFilters">
+                        <div style="margin:2px;">
+                            <span style="color:#DDDDDD;line-height:2;">Period:</span><br />
+                            <SELECT id="REP_PeriodPicker" onchange="changeTicketExplorerFilters(this.id);" style="font-size:24px;">
+                            <OPTION VALUE="Today">Today</OPTION>
+                            <OPTION VALUE="Yesterday">Yesterday</OPTION>
+                            <OPTION VALUE="This Week">This Week</OPTION>
+                            <OPTION VALUE="Past Week">Past Week</OPTION>
+                            <OPTION VALUE="This Month">This Month</OPTION>
+                            <OPTION VALUE="Past Month">Past Month</OPTION>
+                            <OPTION VALUE="This Year">This Year</OPTION>
+                            <OPTION VALUE="Past Year">Past Year</OPTION>
+                            <OPTION VALUE="ignore">(ignore period)</OPTION>
+                            </SELECT>
+                        </div>
+                        
+                        <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">Start:</span><br /><input id="REP_DateStart" type="date" style="font-size:24px;"></div>
+                        <div style="margin:2px;"><span style="color:#DDDDDD;line-height:2;">End:</span><br /><input id="REP_DateEnd" type="date" style="font-size:24px;"></div>
+                        <div style="margin:2px;flex-grow:1;"><span style="color:#DDDDDD;line-height:2;">Refresh:</span><br /><div class="REP_Command" style="margin:2px;font-size:30px;font-weight:bold;" onclick="changeTicketExplorerFilters('REP_PeriodPicker');">Apply</div></div>
+                        
+                    </div>
+                    <div id="TE_Parameters" style="text-align:left;margin:2px;margin-bottom:10px;">
+                        <SELECT id="TE_OpenClosed" onchange="changeTicketExplorerFilters(this.id);" style="font-size:24px;">
+                        <OPTION VALUE="false">Open Tickets</OPTION>
+                        <OPTION VALUE="true">Closed Tickets</OPTION>
+                        <OPTION VALUE="">-</OPTION>
+                        </SELECT>
+                        <SELECT id="TE_Sort" onchange="changeTicketExplorerFilters(this.id);" style="font-size:24px;">
+                        <OPTION VALUE="idDesc">Descending ID</OPTION>
+                        <OPTION VALUE="id">Ascending ID</OPTION>
+                        <OPTION VALUE="dateDesc">Descending Date</OPTION>
+                        <OPTION VALUE="date">Ascending Date</OPTION>
+                        </SELECT>
+
+                    </div>
+                    <div id="TE_DisplayTicket" style="display:none" onclick="displayTicketExplorerTicketinSambaPOS();">Display Ticket</div>
+                    <div id="TE_Ticket"></div>
+                </div>
+            </div>
+        </div>

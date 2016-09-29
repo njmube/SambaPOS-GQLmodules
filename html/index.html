@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>SambaPOS Mobile Application ~ SambaPOS</title>
+
+<meta name="description" content="SambaPOS Mobile Application ~ SambaPOS">
+
+<meta charset="utf-8" />
+<meta name="Keywords" content="flarfernugen">
+<meta name="GENERATOR" content="NOTEPAD">
+<meta name="robots" content="no index, no follow">
+
+<link rel="stylesheet" type="text/css" href="zcss/reset.min.css" />
+<link rel="stylesheet" type="text/css" href="zcss/sambapos.css" media="screen" />
+
+<link rel="shortcut icon" href="images/icons/favicon.ico" />
+<link rel="icon" type="image/gif" href="images/icons/favicon-blue.png" />
+
+
+
+<!-- <script type="text/javascript" src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js'></script> -->
+<script type="text/javascript" src='zjs/lib/jquery.min.js'></script>
+
+<script type="text/javascript" src='zjs/lib/moment.min.js'></script>
+
+<!-- <script type="text/javascript" src='http://ajax.aspnetcdn.com/ajax/signalr/jquery.signalr-2.2.0.min.js'></script> -->
+<script type="text/javascript" src='zjs/lib/jquery.signalr.min.js'></script>
+
+<script type="text/javascript" src='zconfigs/config.js'></script>
+<script type="text/javascript" src='zjs/globalvars.js'></script>
+<script type="text/javascript" src='zjs/sputils.js'></script>
+<script type="text/javascript" src='zjs/gqlqueries.js'></script>
+<script type="text/javascript" src='zjs/zjscommon.js'></script>
+
+<script type="text/javascript" id="js_mod"></script>
+</head>
+
+<body>
+
+<!-- np:/ cp:/ c:1() sc:0() a:/0 -->
+
+<!-- vip:fe80::4827:401a:ffad:1260%2 vc: unique: -->
+    <div id="containerMaster">
+        
+        <div id="top">
+            <div id="module" onClick="navigateTo('module','main_menu','main_menu');" title="Click here for Main Menu">???</div>
+            <div id="indicators" onClick="chatShowFull();">
+                <div id="connection" title="Connection Status">...</div>
+                <div id="workperiod" title="Workperiod ID/Status">...</div>
+                <div id="battery" title="Battery Level">...</div>
+                <div id="MSG_messaging" title="Click here to go to Fullscreen Messaging." onClick="chatShowFull();"><div class="MSG_Indicator MSG_OldMessage">MSG</div></div>
+            </div>
+            <div id="currentUser">[Terminal] (User)</div>
+            <div id="signalRbytes" title="SignalR KB" onClick="clearTrafficBytes('signalr');">0.00</div>
+            <div id="GQLbytes" title="GraphQL KB sent/rcvd/TTL" onClick="clearTrafficBytes('gql');">0.00/0.00/0.00</div>
+            <div id="clock_dateTime" title="Current Date/Time">
+                <span id="clock_date"></span>
+                <span id="clock_time">00:00:00 AM</span>
+            </div>
+        </div>
+        
+        <!-- this section loaded by JQuery depending on nav var -->
+        <div id="containerMODULE">
+        </div> <!-- #containerMODULE -->
+
+    </div><!-- #containerMaster -->
+
+    <!-- hidden elements -->
+    <div id="Tables" class="entityGrid" style="display:none"></div>
+    <div id="Customers" class="entityGrid" style="display:none"></div>
+    <div id="infoMessage" title="click to close" style="display:none"></div>
+    <div id="errorMessage" style="display:none"></div>
+    <div id="helpMessage" style="display:none"></div>
+    <div id="MSG_fullscreen" style="display:none">
+        <div id="MSG_FS_area">
+            <div id="MSG_FS_messages" title="Incoming and Outgoing Messages."></div><input id="MSG_FS_Input" name="MSG_FS_Input" type="text" placeholder="(type message)" title="Enter your Message here and hit ENTER or click SEND."/>
+            <div id="MSG_FS_buttons">
+                <div id="MSG_FS_close" title="Click here to close Fullscreen Messaging." onClick="chatShowFull('hide')">CLOSE</div>
+                <div id="MSG_FS_Send" title="Click here to send your Message." onclick="chatSendClick('MSG_FS');">SEND</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
